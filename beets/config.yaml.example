@@ -1,0 +1,109 @@
+# list of enabled plugins (with settings below)
+plugins: absubmit duplicates embedart fetchart lastgenre lyrics mbsync missing replaygain
+# finished/processed music
+directory: /music
+library: /config/musiclibrary.blb
+# name format for art stored beside albums (example: albumart.jpg)
+art_filename: albumart
+# use multiple threads to accomplish tasks
+threaded: yes
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=original_date#original-date
+original_date: yes
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=original_date#per-disc-numbering
+per_disc_numbering: no
+
+# lets you submit acoustic analysis results to the AcousticBrainz server.
+# requires you to download the extractor manually
+# https://beets.readthedocs.io/en/stable/plugins/absubmit.html
+absubmit:
+    auto: yes
+    extractor: /config/abzsubmit-0.1/streaming_extractor_music
+
+# https://beets.readthedocs.io/en/stable/plugins/embedart.html
+embedart:
+    auto: yes
+
+# lookup art to download
+# uses sources in the order given
+# https://beets.readthedocs.io/en/stable/plugins/fetchart.html
+fetchart:
+    auto: yes
+    minwidth: 1000
+    sources: coverart itunes filesystem
+
+# write changes to files
+# move files when processed, not copy
+# ask to resume previous import if interrupted
+# imported directories are recorded and whether these recorded directories are skipped.
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=incremental#quiet-fallback
+# asks for confirmation on every autotagging match, even the ones that seem very close.
+# timid is the best (but slow) option for data accuracy
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=incremental#importer-options
+import:
+    write: yes
+    copy: no
+    move: yes
+    resume: ask
+    incremental: yes
+    quiet_fallback: skip
+    timid: yes
+    log: /config/beet.log
+    
+# fetches tags from Last.fm and assigns them as genres to your albums and items.
+# https://beets.readthedocs.io/en/stable/plugins/lastgenre.html
+lastgenre:
+    auto: yes
+    source: album
+
+# https://beets.readthedocs.io/en/stable/plugins/lyrics.html
+lyrics:
+    auto: yes
+    sources: genius
+
+# maximum recommendations for each field (lowers score if year and label are missing)
+# prefer releases with these countries and media (and choose one that has original year)
+# if a MB release has more tracks than the one we're importing, ignore it
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=match%20options#autotagger-matching-options
+match:
+    max_rec:
+        year: medium
+        label: strong
+        country: low
+    preferred:
+        countries: ['US', 'XW|XE', 'GB|UK']
+        media: ['Digital Media', 'CD']
+        original_year: yes
+    ignored: unmatched_tracks
+
+# Artist/Album/0-9 - Title
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=match%20options#path-format-configuration
+paths:
+    default: $albumartist/$album%aunique{}/$track - $title
+    singleton: Non-Album/$artist - $title
+    comp: Compilations/$album%aunique{}/$track - $title
+    albumtype_soundtrack: Soundtracks/$album/$track $title 
+
+# ReplayGain, a technique for normalizing audio playback levels.
+# Plex already does this, but you may want it embedded
+# https://beets.readthedocs.io/en/stable/plugins/replaygain.html
+replaygain:
+    auto: no
+
+# default substitutions used by beets, which are sufficient to avoid unexpected behavior on all popular platforms
+# https://beets.readthedocs.io/en/stable/reference/config.html?highlight=replace#replace
+replace:
+    '^\.': _
+    '[\x00-\x1f]': _
+    '[<>:"\?\*\|]': _
+    '[\xE8-\xEB]': e
+    '[\xEC-\xEF]': i
+    '[\xE2-\xE6]': a
+    '[\xF2-\xF6]': o
+    '[\xF8]': o
+    '\.$': _
+    '\s+$': ''
+
+# remove extraneous metadata from files’ tags
+# https://beets.readthedocs.io/en/stable/plugins/scrub.html
+scrub:
+    auto: yes
