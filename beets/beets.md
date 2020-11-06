@@ -126,7 +126,7 @@ Much better. Type `a` and then `enter` to apply.
 ### A match with bad or missing data
 
 ```
-/downloads/new/Album/Anna Of The North/[M]  Believe [157683375] [2020] (5 items)
+/downloads/new/Album/Anna Of The North/Believe [2020] (5 items)
 Correcting tags from:
     Anna Of The North - Believe
 To:
