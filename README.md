@@ -4,8 +4,8 @@ Workflow used to import, organize and match music. [MusicBrainz](https://musicbr
 # Contents
 ## Part 1 - MusicBrainz
 - [Ensuring good data]()
-- [Adding releases]()
-- [Adding artists]()
+- [Adding releases](./musicbrainz/adding-a-release.md)
+- [Adding artists](./musicbrainz/adding-a-artist.md)
 - [Fixing data]()
 ## Part 2 - Beets
 - [Installing](./beets/beets.md#installation)
