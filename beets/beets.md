@@ -60,6 +60,19 @@ The information it gives you next, will be overwhelming at first! Just know orga
 
 ## Reading `import` messages:
 
+There are a handful of key data you want to make sure exists or is accurate:
+
+- Medium (Digital, CD, Vinyl, etc)
+- Release date (shown as year)
+- Release country (shown as [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code)
+- Release label
+- Track titles being changed
+- Large difference in track durations
+
+Generally, the most frequent data that is missing on MusicBrainz releases, is going to be release label, release country and release date (in that order). Plex currently only cares about release date and release label, so these are the important data.
+
+It's good practice to use the same medium from which your files are sourced (specifically if you plan on submitting acoustic data), but it's not required. CD and digital releases usually have identical mastering anyways.
+
 ### A match that has a good default match, and is telling us some file data will be changed:
 
 ```
@@ -169,7 +182,7 @@ Candidates:
 Enter search, enter Id, aBort? 2
 ```
 
-Option #`2` is a German vinyl release, so that looks like a near-exact match.
+Option `2` is a German vinyl release, so that looks like a near-exact match.
 
 ```
 Correcting tags from:
