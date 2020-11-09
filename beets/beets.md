@@ -66,7 +66,8 @@ There are a handful of key data you want to make sure exists or is accurate:
 - Release date (shown as year)
 - Release country (shown as [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code)
 - Release label
-- Track titles being changed
+- Release title doesn't have Extra Title Information (ETI), such as '(deluxe edition)'or '(clean)'
+- Track titles being changed (make sure these don't have ETI either)
 - Large difference in track durations
 
 Generally, the most frequent data that is missing on MusicBrainz releases, is going to be release label, release country and release date (in that order). Plex currently only cares about release date and release label, so these are the important data.

@@ -2,7 +2,11 @@
 
 Before going any further, there are some essential things you should always be thinking about and abiding by, when adding a release:
 
+- Extra Title Information
 
+    You may be used to having information in album (release) and track titles, such as 'clean', 'deluxe edition', 'feat. Artist' or 'EP'. According to [official style guidelines](https://musicbrainz.org/doc/Style/Titles), this is largely wrong, except for outliers. Since MusicBrainz has data types and fields that handle all this, it's much cleaner to not have it in the title.
+
+    If 'deluxe edition' (or version variants) or 'EP' are not listed on the releases cover art, they do not belong in the release title. Instead, put them in the [disambiguation](https://musicbrainz.org/doc/Disambiguation_Comment) field.
 
 # Digital importers
 
