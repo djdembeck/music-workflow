@@ -12,9 +12,9 @@ Before going any further, there are some essential things you should always be t
 
 No one wants to do manual data entry. So thank the maker, there are some tools written by the community to handle the bulk of data entry:
 
-- [a-tisket (by marlonob)](https://community.metabrainz.org/t/a-multi-source-seeder-for-digital-releases/444000) - **Recommended**
+- [a-tisket](https://atisket.pulsewidth.org.uk/) - **Recommended**
 
-    This is arguably the most powerful import tool. It checks 3 streaming platforms (Spotify, Deezer and iTunes), comparing the data between them for a release. It provides incredibly rich data, with minimal amounts of user intervention. *[Read the how-to.](#using-a-tisket)*
+    This is arguably the most powerful import tool. It checks 3 streaming platforms (Spotify, Deezer and iTunes), comparing the data between them for a release. It provides incredibly rich data, with minimal amounts of user intervention. [Originally by marlonob](https://community.metabrainz.org/t/a-multi-source-seeder-for-digital-releases/444000), [forked by atj](https://community.metabrainz.org/t/a-multi-source-seeder-for-digital-releases/444000/189?u=chilkara). *[Read the how-to.](#using-a-tisket)*
 
 - [Discogs for Tampermonkey (by murdos)](https://github.com/murdos/musicbrainz-userscripts/blob/master/discogs_importer.user.js)
 
